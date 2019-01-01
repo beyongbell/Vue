@@ -10,6 +10,10 @@ use App\Http\Resources\ReplyResource;
 
 class ReplyController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('JWT', ['except' => ['index', 'show']]); // and only between
+    }
     /**
      * Display a listing of the resource.
      *

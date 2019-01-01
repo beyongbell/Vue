@@ -8,6 +8,11 @@ use Illuminate\Http\Request;
 
 class LikeController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('JWT'); // and only between
+    }
+
     public function likeIt(Reply $reply)
     {
         $reply->likes()->create([

@@ -9,6 +9,10 @@ use App\Http\Resources\QuestionResource;
 
 class QuestionController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('JWT', ['except' => ['index', 'show']]); // and only between
+    }
     /**
      * Display a listing of the resource.
      *
