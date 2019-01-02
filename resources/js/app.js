@@ -18,7 +18,7 @@ import User from './Helpers/User'
 
 window.User = User;
 
-console.log(User.id())
+window.EventBus = new Vue()
 
 Vue.component('AppHome', require('./components/AppHome.vue').default);
 
