@@ -14,6 +14,10 @@ import Vuetify from 'vuetify'
 
 Vue.use(Vuetify)
 
+import VueSimplemde from 'vue-simplemde'
+
+Vue.use(VueSimplemde)
+
 import User from './Helpers/User'
 
 window.User = User;
