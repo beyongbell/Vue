@@ -29,13 +29,13 @@ export default {
         }
     },
     created() {
-        axios.get('/api/question')
+        axios.get('/api/category')
         .then(res => this.categories = res.data.data)
     },
     methods: {
         create(){
             axios.post('/api/question', this.form)
-            .then(res => console.log(res.data))
+            .then(res => this.$router.push(res.data.path))
             .catch(error => this.errors = error.response.data.error)
         }
     }
