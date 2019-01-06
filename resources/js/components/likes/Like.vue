@@ -20,6 +20,13 @@ export default {
             return this.liked ? 'red' : 'red lighten-4';
         }
     },
+    created() {
+        Echo.channel('likeChannel')
+        .listen('LikeEvent', (e) => {
+            console.log('Broadcast received.');
+            console.log("asdasd");
+        });
+    },
     methods : {
         likeIt () {
             if(User.loggedIn()) {
